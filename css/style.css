@@ -1,0 +1,352 @@
+:root {
+  --income_color: rgba(51, 255, 51, 0.925);
+  --income_color_light: rgba(172, 255, 172, 0.336);
+  --expense_color: rgba(255, 51, 51, 0.925);
+  --expense_color_light: rgba(255, 172, 172, 0.36);
+  --income_head_color: #9dff9dec;
+  --expense_head_color: #fd7878;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: 0;
+  font-family: "Saira Semi Condensed", sans-serif;
+  transition: all 0.3s linear;
+}
+.main {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 400px 50px auto;
+  grid-template-areas:
+    "upper"
+    "middle"
+    "lower";
+}
+
+.upper_body {
+  grid-area: upper;
+  position: relative;
+  background: rgba(0, 0, 0, 0.5);
+}
+.upper_body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("img/bagetbg.jpg") no-repeat top center/cover;
+  z-index: -1;
+}
+
+.bugetDiv {
+  width: 308px;
+  height: 300px;
+  margin: 0px auto;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-eve.nly; */
+}
+
+.headerDiv {
+  /* position: relative;
+    top:-40px; */
+  margin-top: 30px;
+}
+.headerDiv h3 {
+  text-align: center;
+  color: white;
+  font-weight: 100;
+  font-size: 2rem;
+}
+.currentMoneyDiv{
+  width: 100%;
+  display: flex;
+  color: white;
+  padding: 5px;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.9rem;
+  font-weight: 100;
+}
+
+.incomeDiv {
+  width: 324px;
+  height: 60px;
+  margin: 15px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  font-size: 28px;
+  background: var(--income_head_color);
+}
+.incomeDiv span:nth-child(2) {
+  color: white;
+  margin-left: 50px;
+}
+.expenseDiv {
+  width: 324px;
+  height: 60px;
+  margin: 15px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  font-size: 28px;
+  background: var(--expense_head_color);
+}
+.expenseDiv span {
+  display: block;
+  /* margin: 10px auto; */
+}
+.expenseDiv span:nth-child(1) {
+  float: left;
+}
+
+.expenseDiv span:nth-child(2) {
+  color: white;
+  margin-left: 50px;
+}
+
+span.per {
+  position: relative;
+  width: 30px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(252, 158, 141, 0.925);
+  z-index: 1000;
+  font-size: 10px;
+}
+
+span.per:before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: -7px;
+  width: 12px;
+  transform: rotate(45deg);
+  height: 12px;
+  /* border: 1px solid green; */
+  border-radius: 0px;
+  background: rgba(252, 158, 141, 0.925);
+  z-index: -1;
+}
+
+.middle_body {
+  grid-area: middle;
+  height: fit-content;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 255, 0, 0.05);
+}
+
+.middle_body #type {
+  position: relative;
+  right: 30px;
+  width: fit-content;
+  height: 30px;
+  font-size: 18px;
+}
+.middle_body #discription {
+  position: relative;
+  min-width: 226px;
+  right: 0px;
+  width: 25vw;
+  height: 30px;
+  padding: 10px;
+  font-size: 17px;
+}
+.middle_body #value {
+  width: 95px;
+  position: relative;
+  left: 40px;
+  height: 30px;
+  padding: 10px;
+  font-size: 17px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number]{
+  -moz-appearance: textfield;
+}
+.middle_body button {
+  position: relative;
+  left: 80px;
+  font-size: 27px;
+  background: rgba(0, 0, 0, 0);
+  border: 0;
+  cursor: pointer;
+}
+
+.style_middle_inputes_inc {
+  border: 1px solid var(--income_color);
+  border-radius: 4px;
+  background: var(--income_color_light);
+  outline: var(--income_color_light);
+}
+
+.style_middle_inputes_inc:hover {
+  box-shadow: -1px 1px 2px var(--income_color), 1px -1px 2px var(--income_color);
+}
+#addBtn.style_middle_inputes_inc {
+  border: none;
+  box-shadow: none;
+  color: var(--income_color);
+}
+#addBtn.style_middle_inputes_inc:hover{
+  text-shadow: 1px -0px 1px var(--income_color),
+    -1px 0px 1px var(--income_color);
+}
+
+.middle_body.style_middle_inputes_inc{
+  border: none;
+  box-shadow: none;
+  background: var(--income_color_light);
+}
+
+
+.style_middle_inputes_exp {
+  border: 1px solid var(--expense_color);
+  border-radius: 4px;
+  background: var(--expense_color_light);
+  outline: var(--expense_color_light);
+}
+
+.style_middle_inputes_exp:hover {
+  box-shadow: -1px 1px 2px var(--expense_color),
+    1px -1px 2px var(--expense_color);
+}
+
+#addBtn.style_middle_inputes_exp{
+  border: none;
+  box-shadow: none;
+  color: var(--expense_color);
+}
+#addBtn.style_middle_inputes_exp:hover{
+  text-shadow: 1px -0px 1px var(--expense_color),
+    -1px 0px 1px var(--expense_color);
+}
+.middle_body.style_middle_inputes_exp{
+  box-shadow: none;
+  border: none;
+  background: var(--expense_color_light);
+}
+
+.lower_body {
+  grid-area: lower;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.income_listDiv,
+.expenses_listDiv {
+  width: 520px;
+  height: 220px;
+  margin: 10px auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.income_listDiv h3 {
+  position: relative;
+  width: fit-content;
+}
+.expenses_listDiv h3 {
+  position: relative;
+  width: fit-content;
+}
+.Activeinc::before,
+.Activeexp::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.Activeinc::before {
+  border-bottom: 3px solid var(--income_color);
+}
+
+.Activeexp::before {
+  border-bottom: 3px solid var(--expense_color);
+}
+
+
+.incomeList,
+.expenseList {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+  overflow: auto;
+}
+.incomeListItem,
+.expenseListItem {
+    padding: 5px 14px 6px 10px;
+    display: flex;
+    margin: 2px;
+    justify-content: space-between;
+}
+.incomeListItem{
+    background: var(--income_color_light);
+}
+.expenseListItem{
+    background: var(--expense_color_light);
+}
+
+.title {
+  display: inline-block;
+  width: 300px;
+    font-size: 18px;
+    overflow-wrap: break-word;
+}
+.money {
+  position: relative;
+  width: 90px;
+  display: block;
+  font-size: 17px;
+  transform: translateX(10px);
+  overflow-wrap: break-word;
+}
+.deletebtn {
+  opacity: 0;
+  cursor: pointer;
+}
+
+.deletebtn_income{
+  color: var(--income_color);
+}
+.deletebtn_expense{
+  color: var(--expense_color);
+}
+
+.custom_per {
+  position: relative;
+  top: 5px;
+  transform: translateX(15px);
+}
+.incomeListItem:hover > .money,
+.expenseListItem:hover > .money {
+  transform: translateX(-5px);
+}
+.expenseListItem:hover > .custom_per {
+  /* left: 50px; */
+  transform: translateX(-5px);
+}
+.incomeListItem:hover > .deletebtn,
+.expenseListItem:hover > .deletebtn {
+  opacity: 1;
+}

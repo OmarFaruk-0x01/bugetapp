@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buget App</title>
+    <link rel="stylesheet" href="Css/style.css" />
+    <link rel="stylesheet" media="screen and (max-width:830px)" href="css/responsive.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/f9fadaad2e.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="main">
+      <section class="upper_body" id="upper">
+        <div class="bugetDiv">
+          <div class="headerDiv">
+            <h3>Your Buget of <span id="mo">September 2020</span></h3>
+          </div>
+          <div class="currentMoneyDiv">
+            <span id="currentMoney">+ 0</span>
+          </div>
+          <div class="incomeDiv">
+
+            <span>Income</span><span id="totalincmoney">+ 0</span><span></span>
+          </div>
+          <div class="expenseDiv">
+            <span>Expences</span><span id="totalexpmoney">- 0</span><span id="headingexpPer" class="per">0%</span>
+          </div>
+        </div>
+      </section>
+      <section class="middle_body" id="middle">
+        <select class="style_middle_inputes_income" name="" id="type">
+          <option data-other="exp" value="inc" selected>Income</option>
+          <option data-other="inc" value="exp">Expences</option>
+        </select>
+        <input
+          id="discription"
+          class="style_middle_inputes_income"
+          type="text"
+          placeholder="Decription"/>
+        <input
+          id="value"
+          class="style_middle_inputes_income"
+          type="number"
+          placeholder="Money"/>
+        <button id="addBtn" class="">
+          <i class="far fa-check-circle"></i>
+        </button>
+      </section>
+      <section class="lower_body" id="lower">
+        <div class="income_listDiv">
+          <h3 id="incLowTitle" >Income</h3>
+          <div class="incomeList">
+            <!-- <div class="incomeListItem">
+              <span class="title">Projectloreasd Lorem ipsum dolor sit amet.</span><span class="money">+4000</span
+              ><span class="deletebtn deletebtn_income"><i class="far fa-trash-alt"></i></span>
+            </div> -->
+          </div>
+        </div>
+        <div class="expenses_listDiv">
+          <h3 id="expLowTitle">Expenses</h3>
+          <div class="expenseList">
+            <!-- <div class="expenseListItem">
+              <span class="title">Projeaksdlkasdlaksjdaskldjasdlkasjldkajlaksjdksdjalsdkjct</span><span class="money">+400000000</span
+              ><span class="per custom_per"></span
+              ><span class="deletebtn deletebtn_expense"><i class="far fa-trash-alt"></i></span>
+            </div> -->
+            
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+  <script src="app.js"></script>
+</html>
